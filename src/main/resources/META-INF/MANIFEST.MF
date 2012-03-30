@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.nuxeo.license
+Nuxeo-Component: OSGI-INF/computedgroups-contrib.xml,
+ OSGI-INF/license-framework.xml,
+ OSGI-INF/listener-contrib.xml,
+ OSGI-INF/scheduler-contrib.xml,
+ OSGI-INF/actions-contrib.xml
+
+
+
+

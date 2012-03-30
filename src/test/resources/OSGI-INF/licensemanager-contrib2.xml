@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.license.internal.LicenseManager.testContrib">
+
+  <extension target="org.nuxeo.license.internal.LicenseManagerComponent"
+    point="licenseManagerImpl">
+    <licenseManager name="myLicenseManager3"
+      class="org.nuxeo.license.internal.DummyLicenseManager" overradable="false" />
+  </extension>
+
+</component>

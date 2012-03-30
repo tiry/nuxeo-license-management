@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<fragment version="1">
+
+  <require>org.nuxeo.ecm.platform.lang</require>
+
+  <extension target="web#FILTER">
+    <filter>
+      <display-name>Nuxeo License Guard</display-name>
+      <filter-name>LicenseGuard</filter-name>
+      <filter-class>
+        org.nuxeo.license.filter.LicenseGuardFilter
+      </filter-class>
+    </filter>
+
+    <filter-mapping>
+      <filter-name>LicenseGuard</filter-name>
+      <url-pattern>/*</url-pattern>
+      <dispatcher>REQUEST</dispatcher>
+      <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
+    <listener>
+      <listener-class>org.nuxeo.license.filter.LicenseGuardFilter
+      </listener-class>
+    </listener>
+
+  </extension>
+
+  <install>
+    <!-- unzip the war template -->
+    <unzip from="${bundle.fileName}" to="/" prefix="web">
+      <include>web/nuxeo.war/**</include>
+    </unzip>
+
+    <delete path="${bundle.fileName}.tmp" />
+    <mkdir path="${bundle.fileName}.tmp" />
+    <unzip from="${bundle.fileName}" to="${bundle.fileName}.tmp" />
+
+    <append from="${bundle.fileName}.tmp/OSGI-INF/i18n/messages.properties"
+      to="nuxeo.war/WEB-INF/classes/messages.properties" addNewLine="true" />
+    <delete path="${bundle.fileName}.tmp" />
+
+  </install>
+
+</fragment>
+

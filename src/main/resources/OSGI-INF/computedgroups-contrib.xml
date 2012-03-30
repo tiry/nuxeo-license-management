@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.ecm.platform.license.computedgroups.contrib">
+
+    <require>org.nuxeo.ecm.platform.computedgroups.ComputedGroupsServiceImpl</require>
+
+    <extension target="org.nuxeo.ecm.platform.computedgroups.ComputedGroupsServiceImpl"
+        point="computer">
+
+        <groupComputer name="licenses">
+            <allowOverride>true</allowOverride>
+            <cacheEnable>true</cacheEnable>
+            <cacheTimeout>120</cacheTimeout>
+            <computer>org.nuxeo.license.virtualgroups.LicenseGroupComputer</computer>
+        </groupComputer>
+    </extension>
+
+    <extension target="org.nuxeo.ecm.platform.computedgroups.ComputedGroupsServiceImpl"
+        point="computerChain">
+    <groupComputerChain>
+       <computers>
+         <computer>licenses</computer>
+       </computers>
+    </groupComputerChain>
+
+    </extension>
+
+</component>

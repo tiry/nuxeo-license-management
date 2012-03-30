@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.license.listener">
+
+  <extension target="org.nuxeo.ecm.core.event.EventServiceComponent"
+             point="listener">
+
+    <listener name="licenseCheckerListener" async="false"
+              postCommit="false"
+              class="org.nuxeo.license.listener.LicenseCheckerListener">
+      <event>licenseCheck</event>
+    </listener>
+
+  </extension>
+</component>

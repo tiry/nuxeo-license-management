@@ -1,0 +1,30 @@
+<component
+  name="org.nuxeo.licenses.actions">
+
+  <require>org.nuxeo.connect.client.actions</require>
+
+  <extension
+    target="org.nuxeo.ecm.platform.actions.ActionService"
+    point="actions">
+
+    <action
+      id="Licenses"
+      link="view_admin-fragment.xhtml"
+      label="admcommand.licenses"
+      order="80">
+      <category>NUXEO_ADMIN</category>
+      <filter-id>only_for_manager</filter-id>
+    </action>
+
+    <action
+      id="LicensesManagement"
+      link="/incl/licenses/licensesManagement.xhtml"
+      label="tab.licenses.management"
+      order="10">
+      <category>Licenses_sub_tab</category>
+      <filter-id>only_for_manager</filter-id>
+    </action>
+
+  </extension>
+
+</component>
